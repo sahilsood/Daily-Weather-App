@@ -2,6 +2,9 @@
 
 The Weather App lets you select your preferred city and display the current weather by making JSON API calls to openweathermap.org API.
 
+![Screenshot](banner.png)
+
+
 Technology Stack:
 
 • MVVM Architecture: ViewModel, Repository, Event Structure
@@ -15,8 +18,3 @@ Technology Stack:
 • Singleton Software Design Pattern.
 
 • Executors, Background Threads and ThreadPools
-
-
-![Screenshot](banner.png)
-
-Mockkup Designed by: <a href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a>
