@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Daily Weather</string>
+    <string name="api_key">AIzaSyDjSduvYyoB58TRsMCMmae6tkuV2TmmR6s</string>
+
+</resources>
