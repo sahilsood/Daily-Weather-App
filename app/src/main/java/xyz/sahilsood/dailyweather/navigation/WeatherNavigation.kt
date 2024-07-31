@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import xyz.sahilsood.dailyweather.screens.MainScreen
 import xyz.sahilsood.dailyweather.screens.SplashScreen
 
 
@@ -13,6 +14,9 @@ fun WeatherNavigation() {
     NavHost(navController = navController, startDestination = WeatherScreens.SplashScreen.name) {
         composable(WeatherScreens.SplashScreen.name) {
             SplashScreen(navController = navController)
+        }
+        composable(WeatherScreens.MainScreen.name) {
+            MainScreen(navController = navController)
         }
     }
 }
