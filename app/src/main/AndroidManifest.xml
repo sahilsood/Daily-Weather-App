@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name="xyz.sahilsood.dailyweather.ui.MainActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name="xyz.sahilsood.dailyweather.ui.MainActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name="xyz.sahilsood.dailyweather.ui.HomeActivity"
             android:exported="true"
