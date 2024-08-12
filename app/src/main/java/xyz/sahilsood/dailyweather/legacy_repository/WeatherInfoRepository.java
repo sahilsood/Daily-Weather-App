@@ -1,4 +1,4 @@
-package xyz.sahilsood.dailyweather.repositories;
+package xyz.sahilsood.dailyweather.legacy_repository;
 
 import androidx.lifecycle.LiveData;
 

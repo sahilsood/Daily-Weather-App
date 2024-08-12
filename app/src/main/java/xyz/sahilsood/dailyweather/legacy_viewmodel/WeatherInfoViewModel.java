@@ -1,4 +1,4 @@
-package xyz.sahilsood.dailyweather.viewmodels;
+package xyz.sahilsood.dailyweather.legacy_viewmodel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
@@ -7,7 +7,7 @@ import java.util.List;
 
 import xyz.sahilsood.dailyweather.models.WeatherForecast;
 import xyz.sahilsood.dailyweather.models.WeatherInfo;
-import xyz.sahilsood.dailyweather.repositories.WeatherInfoRepository;
+import xyz.sahilsood.dailyweather.legacy_repository.WeatherInfoRepository;
 
 public class WeatherInfoViewModel extends ViewModel {
     private static WeatherInfoRepository weatherInfoRepository;

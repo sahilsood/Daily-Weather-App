@@ -1,18 +1,2 @@
-pluginManagement {
-    repositories {
-        google() // Ensure Google's Maven repository is included
-        mavenCentral()
-        gradlePluginPortal() // Ensure Gradle Plugin Portal is included
-    }
-
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == 'com.google.dagger.hilt.android') {
-                useModule('com.google.dagger:hilt-android-gradle-plugin:2.40.5')
-            }
-        }
-    }
-}
-
 include ':app'
 rootProject.name = 'Daily Weather'

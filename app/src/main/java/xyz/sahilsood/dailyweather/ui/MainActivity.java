@@ -1,7 +1,6 @@
 package xyz.sahilsood.dailyweather.ui;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.View;
@@ -16,7 +15,6 @@ import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -39,7 +37,7 @@ import xyz.sahilsood.dailyweather.R;
 import xyz.sahilsood.dailyweather.adapters.WeatherAdapter;
 import xyz.sahilsood.dailyweather.models.WeatherForecast;
 import xyz.sahilsood.dailyweather.models.WeatherInfo;
-import xyz.sahilsood.dailyweather.viewmodels.WeatherInfoViewModel;
+import xyz.sahilsood.dailyweather.legacy_viewmodel.WeatherInfoViewModel;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
