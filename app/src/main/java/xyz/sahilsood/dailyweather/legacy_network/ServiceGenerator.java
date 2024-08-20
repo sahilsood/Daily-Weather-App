@@ -1,4 +1,4 @@
-package xyz.sahilsood.dailyweather.requests;
+package xyz.sahilsood.dailyweather.legacy_network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

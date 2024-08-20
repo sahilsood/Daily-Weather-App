@@ -6,7 +6,7 @@ import java.util.List;
 
 import xyz.sahilsood.dailyweather.models.WeatherForecast;
 import xyz.sahilsood.dailyweather.models.WeatherInfo;
-import xyz.sahilsood.dailyweather.requests.OpenWeatherMapApiClient;
+import xyz.sahilsood.dailyweather.legacy_network.OpenWeatherMapApiClient;
 
 public class WeatherInfoRepository {
     private static WeatherInfoRepository instance;

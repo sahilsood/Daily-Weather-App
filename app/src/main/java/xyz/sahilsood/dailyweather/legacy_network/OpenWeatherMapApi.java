@@ -1,6 +1,4 @@
-package xyz.sahilsood.dailyweather.requests;
-
-import java.util.List;
+package xyz.sahilsood.dailyweather.legacy_network;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
