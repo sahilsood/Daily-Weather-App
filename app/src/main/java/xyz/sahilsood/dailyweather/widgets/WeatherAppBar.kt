@@ -1,5 +1,6 @@
 package xyz.sahilsood.dailyweather.widgets
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -10,6 +11,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
@@ -51,7 +53,16 @@ fun WeatherAppBar(
                 Box {}
             }
         },
-        navigationIcon = {},
+        navigationIcon = {
+            if (icon != null) {
+                Icon(
+                    imageVector = icon,
+                    contentDescription = "Back",
+                    tint = MaterialTheme.colors.onSecondary,
+                    modifier = Modifier.clickable { onButtonClicked.invoke() }
+                )
+            }
+        },
         backgroundColor = Color.Transparent,
         elevation = elevation
     )
