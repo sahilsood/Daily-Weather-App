@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import xyz.sahilsood.dailyweather.screens.main.MainScreen
 import xyz.sahilsood.dailyweather.screens.SplashScreen
+import xyz.sahilsood.dailyweather.screens.search.SearchScreen
 
 
 @Composable
@@ -16,8 +17,10 @@ fun WeatherNavigation() {
             SplashScreen(navController = navController)
         }
         composable(WeatherScreens.MainScreen.name) {
-
             MainScreen(navController = navController)
+        }
+        composable(WeatherScreens.SearchScreen.name) {
+            SearchScreen(navController = navController)
         }
     }
 }
