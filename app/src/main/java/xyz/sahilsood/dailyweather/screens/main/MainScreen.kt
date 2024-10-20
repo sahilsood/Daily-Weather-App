@@ -47,11 +47,15 @@ import kotlin.math.sin
 import kotlin.random.Random
 
 @Composable
-fun MainScreen(navController: NavHostController, mainViewModel: MainViewModel = hiltViewModel()) {
+fun MainScreen(
+    navController: NavHostController,
+    mainViewModel: MainViewModel = hiltViewModel(),
+    city: String
+) {
     val weatherData = produceState<DataOrException<DailyWeather, Boolean, Exception>>(
         initialValue = DataOrException(loading = true)
     ) {
-        value = mainViewModel.getWeatherData("Charlotte")
+        value = mainViewModel.getWeatherData(city = city)
     }.value
 
     if (weatherData.loading == true) {
@@ -116,7 +120,8 @@ fun FallingLeaf() {
 
     // Animate horizontal sway with a sinusoidal function for natural left-right movement
     val horizontalDrift = remember { Random.nextInt(30, 80) }  // Amplitude for left-right drift
-    val startX = remember { Random.nextFloat() * screenWidthPx }  // Random starting X position across the screen width
+    val startX =
+        remember { Random.nextFloat() * screenWidthPx }  // Random starting X position across the screen width
 
     // Animate leaf rotation
     val rotation by infiniteTransition.animateFloat(

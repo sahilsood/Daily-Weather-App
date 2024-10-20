@@ -1,5 +1,7 @@
 package xyz.sahilsood.dailyweather.legacy_repository;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 
 import java.util.List;

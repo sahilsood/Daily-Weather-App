@@ -17,6 +17,7 @@ class WeatherRepository @Inject constructor(private val weatherApi: WeatherApi) 
             response
         } catch (e: Exception) {
             Log.d("WeatherRepository", "Data: ${e.message}")
+            Log.d("WeatherRepository", "Data: ${e.cause}")
             return DataOrException(e = e)
         }
         return DataOrException(data = response)

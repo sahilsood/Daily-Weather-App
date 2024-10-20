@@ -1,9 +1,11 @@
 package xyz.sahilsood.dailyweather.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import xyz.sahilsood.dailyweather.screens.main.MainScreen
 import xyz.sahilsood.dailyweather.screens.SplashScreen
 import xyz.sahilsood.dailyweather.screens.search.SearchScreen
@@ -16,8 +18,14 @@ fun WeatherNavigation() {
         composable(WeatherScreens.SplashScreen.name) {
             SplashScreen(navController = navController)
         }
-        composable(WeatherScreens.MainScreen.name) {
-            MainScreen(navController = navController)
+        val route = WeatherScreens.MainScreen.name
+        composable(
+            route = "$route/{city}",
+            arguments = listOf(navArgument("city") { type = NavType.StringType })
+        ) { navBack ->
+            navBack.arguments?.getString("city")?.let { city ->
+                MainScreen(navController = navController, city = city)
+            }
         }
         composable(WeatherScreens.SearchScreen.name) {
             SearchScreen(navController = navController)
