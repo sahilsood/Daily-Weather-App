@@ -1,6 +1,6 @@
 package xyz.sahilsood.dailyweather.navigation
 
-enum class WeatherScreens{
+enum class WeatherScreens {
     SplashScreen,
     MainScreen,
     AboutScreen,

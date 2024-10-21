@@ -8,7 +8,10 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import xyz.sahilsood.dailyweather.screens.main.MainScreen
 import xyz.sahilsood.dailyweather.screens.SplashScreen
+import xyz.sahilsood.dailyweather.screens.about.AboutScreen
+import xyz.sahilsood.dailyweather.screens.favorites.FavoritesScreen
 import xyz.sahilsood.dailyweather.screens.search.SearchScreen
+import xyz.sahilsood.dailyweather.screens.settings.SettingsScreen
 
 
 @Composable
@@ -29,6 +32,15 @@ fun WeatherNavigation() {
         }
         composable(WeatherScreens.SearchScreen.name) {
             SearchScreen(navController = navController)
+        }
+        composable(WeatherScreens.AboutScreen.name) {
+            AboutScreen(navController = navController)
+        }
+        composable(WeatherScreens.SettingsScreen.name) {
+            SettingsScreen(navController = navController)
+        }
+        composable(WeatherScreens.FavoritesScreen.name) {
+            FavoritesScreen(navController = navController)
         }
     }
 }
