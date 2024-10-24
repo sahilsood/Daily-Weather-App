@@ -172,7 +172,6 @@ fun SettingsDropDownMenu(showDialog: MutableState<Boolean>, navController: NavCo
                                 when (item) {
                                     0 -> navController.navigate(WeatherScreens.AboutScreen.name)
                                     1 -> navController.navigate(WeatherScreens.FavoritesScreen.name)
-                                    2 -> navController.navigate(WeatherScreens.SettingsScreen.name)
                                 }
                             }
                     )
