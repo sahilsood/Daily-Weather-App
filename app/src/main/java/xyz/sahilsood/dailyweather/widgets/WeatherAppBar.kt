@@ -1,5 +1,7 @@
 package xyz.sahilsood.dailyweather.widgets
 
+import android.content.Context
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -24,6 +26,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -92,23 +95,30 @@ fun WeatherAppBar(
                 )
             }
             if (isMainScreen) {
-                val city = title.split(",")[0]
-                val country = title.split(",")[1]
-                Icon(
-                    imageVector = Icons.Default.FavoriteBorder,
-                    contentDescription = "Favorites",
-                    modifier = Modifier
-                        .scale(0.9f)
-                        .clickable {
-                            viewModel.insertFavorite(
-                                favorite = Favorite(
-                                    city = city,
-                                    country = country
+                val isAlreadyFavorite = viewModel.favorites.collectAsState().value.filter { item ->
+                    (item.city == title.split(",")[0] && item.country == title.split(",")[1])
+                }
+                if (isAlreadyFavorite.isEmpty()) {
+                    val city = title.split(",")[0]
+                    val country = title.split(",")[1]
+                    Icon(
+                        imageVector = Icons.Default.FavoriteBorder,
+                        contentDescription = "Favorites",
+                        modifier = Modifier
+                            .scale(0.9f)
+                            .clickable {
+                                viewModel.insertFavorite(
+                                    favorite = Favorite(
+                                        city = city,
+                                        country = country
+                                    )
                                 )
-                            )
-                        },
-                    tint = Color.Red.copy(alpha = 0.6f)
-                )
+                            },
+                        tint = Color.Red.copy(alpha = 0.6f)
+                    )
+                } else {
+                    Box {}
+                }
             }
         },
         backgroundColor = Color.Transparent,
