@@ -30,6 +30,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.TextStyle
@@ -37,8 +38,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import xyz.sahilsood.dailyweather.models.Favorite
 import xyz.sahilsood.dailyweather.navigation.WeatherScreens
+import xyz.sahilsood.dailyweather.screens.favorites.FavoriteViewModel
 
 
 @Composable
@@ -48,6 +52,7 @@ fun WeatherAppBar(
     isMainScreen: Boolean = true,
     elevation: Dp = 0.dp,
     navController: NavController,
+    viewModel: FavoriteViewModel = hiltViewModel(),
     onAddActionClicked: () -> Unit = {},
     onButtonClicked: () -> Unit = {}
 ) {
@@ -84,6 +89,25 @@ fun WeatherAppBar(
                     contentDescription = "Back",
                     tint = MaterialTheme.colors.onSecondary,
                     modifier = Modifier.clickable { onButtonClicked.invoke() }
+                )
+            }
+            if (isMainScreen) {
+                val city = title.split(",")[0]
+                val country = title.split(",")[1]
+                Icon(
+                    imageVector = Icons.Default.FavoriteBorder,
+                    contentDescription = "Favorites",
+                    modifier = Modifier
+                        .scale(0.9f)
+                        .clickable {
+                            viewModel.insertFavorite(
+                                favorite = Favorite(
+                                    city = city,
+                                    country = country
+                                )
+                            )
+                        },
+                    tint = Color.Red.copy(alpha = 0.6f)
                 )
             }
         },
